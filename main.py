@@ -9,11 +9,14 @@ import os
 
 JOKE = "Management replaced the dead office plants with a poster of a forest and called it our wellness program."
 
+OUTPUT_PATH = "/output/entry.txt"
+
 
 def main():
-    os.makedirs("/output", exist_ok=True)
-    with open("/output/entry.txt", "w", encoding="utf-8") as f:
+    os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
+    with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
         f.write(JOKE)
+    print(JOKE)
 
 
 if __name__ == "__main__":
